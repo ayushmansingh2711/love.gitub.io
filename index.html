@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #game-container{
+            position: relative;
+            width: 500px;
+            height: 600px;
+            border: 2px solid #333;
+            margin:5px ;
+            overflow: hidden;
+           
+             justify-content: center;
+        }
+        #target{
+            position: absolute;
+            left: 200px;
+            background-color: rgb(0, 89, 255);
+            border: none;
+            width: 90px;
+            border-radius: 10px;
+            font-size: 25px;
+            padding: 8px;
+            cursor: pointer;
+            transition: top 0.5s, left 0.5s;
+        }
+        #yes{
+            background-color: red;
+            width: 90px;
+            font-size: 29px;
+            border-radius: 10px;
+            border: none;
+        }
+        .game{
+            background-color: aqua;
+        }
+        .maindiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body > 
+      
+     <div class="maindiv">
+        <div id="game-container" class="game">
+            <div class="box">
+               <h1>DO you love me?💕</h1>
+               <button id="target">no</button>
+                <a href="file:///C:/Users/UpFlairs/Desktop/form/love2.html"><button id="yes">yes</button></a>
+            </div>
+            </div>
+     </div>
+
+     <script>
+        const target = document.getElementById(`target`);
+        function moveTarget(){
+            const maxWidth=400;
+            const maxHeight=400;
+
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+
+            target.style.left = randomX + `px`;
+            target.style.top = randomY + `px`;
+        }
+        target.addEventListener(`mouseenter`, function(){
+            moveTarget();
+        })
+      </script>
+</body>
+</html>
